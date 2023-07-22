@@ -1,0 +1,9 @@
+The given values in "Ah" column shows the amount of amp-hour discharge from the battery with time. So, by adding the nominal amp-hour i.e. 2.9Ah, to all the values and dividing it again by 2.9Ah we will get out our target variable, SOC.
+
+Similarly, the given values in "Wh" column shows the amount of watt-hour discharge from the battery with time. Panasonic 18650PF has a maximum energy capacity of 9.9Wh. So, by adding the maximum energy capacity to all the values and dividing it again by 9.9Wh, we will get our other target variable, SOE.
+
+
+plt.boxplot(X_train_SOC['Temp ©'])
+plt.ylabel('Temp ©')
+plt.title('Temp ©')
+plt.show()

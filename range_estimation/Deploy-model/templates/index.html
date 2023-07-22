@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>EV Range</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>Predict Range of an EV</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+        <input
+          type="text"
+          name="quantity(kWh)"
+          placeholder="Quantity(kWh)"
+          required="required"
+        />
+
+        <input
+          type="text"
+          name="city"
+          placeholder="City(0/1)"
+          required="required"
+        />
+        <input
+          type="text"
+          name="motor_way"
+          placeholder="Motor way(0/1)"
+          required="required"
+        />
+        <input
+          type="text"
+          name="country_roads"
+          placeholder="Country roads(0/1)"
+          required="required"
+        />
+
+        <input
+          type="text"
+          name="Consumption(kWh/100km)"
+          placeholder="Consumption(kWh/100km)"
+          required="required"
+        />
+        <input type="text" name="A/C" placeholder="A/C" required="required" />
+        <input
+          type="text"
+          name="park_heating"
+          placeholder="Park heating(0/1)"
+          required="required"
+        />
+
+        <input
+          type="text"
+          name="ecr_deviation"
+          placeholder="Ecr Deviation"
+          required="required"
+        />
+        <input
+          type="text"
+          name="Winter tires"
+          placeholder="Winter tires(0/1)"
+          required="required"
+        />
+        <input
+          type="text"
+          name="driving_style_fast"
+          placeholder="Driving style Fast(0/1)"
+          required="required"
+        />
+
+        <input
+          type="text"
+          name="driving_style_moderate"
+          placeholder="Driving style Moderate(0/1)"
+          required="required"
+        />
+
+        <input
+          type="text"
+          name="avg_speed(km/h)"
+          placeholder="Avg speed(km/h)"
+          required="required"
+        />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Predict
+        </button>
+      </form>
+
+      <br />
+      <br />
+      {{ prediction_text }}
+    </div>
+  </body>
+</html>

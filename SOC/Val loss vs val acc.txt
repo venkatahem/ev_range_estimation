@@ -1,0 +1,7 @@
+But with val_loss(keras validation loss) and val_acc(keras validation accuracy), many cases can be possible like below:
+
+val_loss starts increasing, val_acc starts decreasing. This means model is cramming values not learning
+
+val_loss starts increasing, val_acc also increases.This could be case of overfitting or diverse probability values in cases where softmax is being used in output layer
+
+val_loss starts decreasing, val_acc starts increasing. This is also fine as that means model built is learning and working fine.
